@@ -1,0 +1,141 @@
+@import "../../../../common"
+
+#wrapper-menu.scroll-on-page
+  background: $color-black
+
+#wrapper-menu
+    transition: background 1s
+    background: $color-transparent
+    position: fixed
+    width: 100%
+    z-index: 9
+
+    &.active
+        background: $color-black
+
+    .icon-logo
+        display: table
+        width: 100%
+
+        svg
+            width: 100%
+            display: table-cell
+            position: absolute
+            @include breakpoint(md)
+                position: static
+                width: 60%
+                margin: auto   
+            
+
+    ul
+        display: table
+        width: 100%
+        position: relative
+        margin: 0
+        text-align: center
+
+        li
+            display: table-cell
+            position: relative
+            padding: 1rem
+            cursor: pointer
+            @include breakpoint(md)
+                padding: 0.5rem
+
+            &.active
+                a 
+                    &:after
+                        content: ''
+                        height: .1rem
+                        width: 100%
+                        display: block
+                        background: $color-white
+
+            a
+                color: $color-white
+                display: inline-block
+                font-size: .9rem
+
+                &:after
+                    content: ''
+                    height: .2rem
+                    width: 0
+                    display: block
+                    background: linear-gradient(270deg, $color-blue-cloud, $color-dark-blue, $color-magenta-violet)
+                    background-size: 600% 600%
+                    
+                    @include gradiente-infinite
+
+                &:hover
+                    text-decoration: none
+
+                    &:after
+                        width: 100%
+                        transition: width 0.5s
+
+            &.featured
+                transition: background .7s
+                background: $color-magenta-violet
+                -webkit-animation: rubberBand 0.8s linear alternate
+                -moz-animation: rubberBand 0.8s linear alternate
+                -o-animation: rubberBand 0.8s linear alternate
+                animation: rubberBand 0.8s linear alternate
+
+                &:hover
+                    background: $color-blue-cloud
+
+                    a
+                        border-bottom: 0
+                        padding-bottom: 0
+                        text-decoration: none    
+
+                        &:after
+                            width: 0    
+                &.active
+                    background: $color-blue-cloud
+                    a 
+                        &:after 
+                            width: 0      
+            &:hover
+                .sub-menu
+                    display: block
+                    -webkit-animation: fadeInDown 0.6s linear alternate
+                    -moz-animation: fadeInDown 0.6s linear alternate
+                    -o-animation: fadeInDown 0.6s linear alternate
+                    animation: fadeInDown 0.6s linear alternate 
+                    
+        
+
+    .sub-menu
+        display: none
+        min-height: 24rem
+        position: fixed
+        width: 100vw
+        background: $color-black
+        overflow: hidden
+        left: 0
+        top: 3.4rem
+        z-index: -1
+        @include breakpoint(md)
+            top: 10.2rem
+
+        &:before
+            content: ''
+            width: 100%
+            display: block
+            border-top: 2px solid $color-white
+            /* inserir */
+
+        .icon
+            margin-top: 3rem
+
+        ul
+            display: block
+            text-align: center
+            padding-top: 1rem
+
+            li
+                display: block
+                padding: .3rem 1rem .3rem 1rem
+                @include breakpoint(md)
+                    width: 49%

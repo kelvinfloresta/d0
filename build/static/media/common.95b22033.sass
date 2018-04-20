@@ -1,0 +1,944 @@
+//common.sass
+
+@import "package-color"
+@import "breakpoints"
+
+
+@import url('https://fonts.googleapis.com/css?family=Play|Raleway')
+
+
+*
+    font-family: 'Raleway', sans-serif
+    color: $color-graphite
+
+strong
+    font-weight: bold
+
+    &.special
+        font-weight: 600
+        color: $color-magenta-violet
+        font-size: 1.2rem
+
+a 
+    color: $color-grey
+    cursor: pointer
+
+    &:hover
+        color: $color-magenta-violet
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font-family: 'Play', sans-serif
+
+    span,
+    strong,
+    a
+        font-family: 'Play', sans-serif
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span 
+    &.featured
+        color: $color-magenta-violet
+        text-align: left
+
+        strong
+            color: $color-magenta-violet
+
+textarea
+    
+    resize: none
+    
+section
+
+    background: $color-white
+    z-index: 2
+    position: relative
+
+    .section
+
+        background: $color-white
+        z-index: 2
+        position: relative
+ul
+    margin: 0
+    padding: 0
+    li
+        list-style: none
+        padding: 0
+div,
+section 
+    &.featured
+        background: $color-light-grey
+
+        .container
+            background: $color-light-grey !important
+
+    
+.button
+    padding: 1rem
+    border: 0
+    border-radius: .5rem
+    background: $color-magenta-violet
+    margin: auto
+    display: block
+    color: $color-white
+    font-size: 1rem
+    cursor: pointer
+    font-weight: bold
+    font-family: 'Play', sans-serif
+    text-transform: uppercase
+    transition-duration: 0.7s
+
+    strong
+        color: $color-white
+
+    &:hover
+        background: $color-blue-cloud
+        color: $color-white
+
+    &.area
+        background: $color-blue-cloud
+        font-size: 1.2rem
+        margin-top: 3rem
+        text-align: center
+
+        &:hover
+            background: $color-magenta-violet
+svg
+    .fill-white
+        fill: $color-white
+    .fill-light-grey
+        fill: $color-light-grey
+    .fill-dark-blue
+        fill: $color-dark-blue
+    .fill-magenta-violet
+        fill: $color-magenta-violet
+    .fill-blue-cloud
+        fill: $color-blue-cloud
+    .fill-graphite
+        fill: $color-graphite
+    .fill-lighten-dark-blue
+        fill: $color-lighten-dark-blue
+    .fill-lighten-magenta-violet
+        fill: $color-lighten-magenta-violet
+    .fill-lighten-blue-cloud
+        fill: $color-lighten-blue-cloud
+    .fill-facebook
+        fill: $color-facebook
+    .fill-twitter
+        fill: $color-twitter
+    .fill-google-plus
+        fill: $color-google-plus
+    .fill-linkedin
+        fill: $color-linkedin
+
+.img-responsive
+    overflow: hidden
+    height: auto
+    margin-bottom: 20px
+
+    img
+        width: 100%
+        height: auto
+
+/* Animações */
+
+@mixin gradiente-infinite
+    -webkit-animation: gradientAnimator 8s ease infinite
+    -moz-animation: gradientAnimator 8s ease infinite
+    -o-animation: gradientAnimator 8s  ease infinite
+    animation: gradientAnimator 8s  ease infinite
+
+@mixin pulse
+	-webkit-animation: pulse-animation 1s linear infinite
+	-moz-animation: pulse-animation 1s linear infinite
+	-ms-animation: pulse-animation 1s linear infinite
+	animation: pulse-animation 1s linear infinite
+
+@mixin hover-blue
+    color: $color-blue-cloud
+    transition-duration: 0.7s
+    text-decoration: none
+
+@keyframes "pulse-animation" 
+ 0%
+    -webkit-transform: scale(1.1)
+   	-moz-transform: scale(1.1)
+   	-o-transform: scale(1.1)
+   	-ms-transform: scale(1.1)
+   	transform: scale(1.1)
+
+ 50% 
+    -webkit-transform: scale(0.8)
+   	-moz-transform: scale(0.8)
+   	-o-transform: scale(0.8)
+   	-ms-transform: scale(0.8)
+   	transform: scale(0.8)
+ 
+ 100% 
+    -webkit-transform: scale(1)
+   	-moz-transform: scale(1)
+   	-o-transform: scale(1)
+   	-ms-transform: scale(1)
+   	transform: scale(1)
+
+@-moz-keyframes pulse-animation
+ 0%
+   -moz-transform: scale(1.1)
+   transform: scale(1.1)
+
+ 50% 
+   -moz-transform: scale(0.8)
+   transform: scale(0.8)
+
+ 100%
+   -moz-transform: scale(1)
+   transform: scale(1)
+
+@-webkit-keyframes "pulse-animation" 
+ 0%
+   -webkit-transform: scale(1.1)
+   transform: scale(1.1)
+ 
+ 50% 
+   -webkit-transform: scale(0.8)
+   transform: scale(0.8)
+ 
+ 100% 
+   -webkit-transform: scale(1)
+   transform: scale(1)
+
+@-ms-keyframes "pulse-animation" 
+ 0% 
+   -ms-transform: scale(1.1)
+   transform: scale(1.1)
+ 
+ 50% 
+   -ms-transform: scale(0.8)
+   transform: scale(0.8)
+ 
+ 100% 
+   -ms-transform: scale(1)
+   transform: scale(1)
+ 
+
+
+.wrapper-title-area
+    display: table
+    width: 100%
+
+    .title
+
+        &.area
+            display: table-cell
+
+        span
+            display: inline-block
+            &:after
+                content: ''
+                height: .4rem
+                width: 50%
+                display: block
+                background: linear-gradient(90deg, $color-blue-cloud 30%, $color-dark-blue 30%, $color-dark-blue 65%, $color-magenta-violet 65%, $color-magenta-violet 100%)
+                background-size: 100% 600% 
+                -webkit-animation: bounceInLeft  2s linear 1
+                -moz-animation: bounceInLeft  2s linear 1
+                -o-animation: bounceInLeft  2s linear 1
+                animation: bounceInLeft  2s linear 1
+                    
+                   
+                    
+.title  
+    width: 100%
+    display: inline-block
+    text-align: center
+    font-weight: bold
+    &.area
+        margin-top: 5rem
+
+    &.top
+        margin-top: 0
+
+img 
+    width: 100%
+
+#standing
+    .blog-inside
+        #wrapper-social-networks
+            background: $color-black
+    #wrapper-main
+
+        z-index: 2
+        position: absolute
+        width: 100%
+
+        
+    .category
+            text-align: left
+            margin-bottom: 1rem
+            z-index: 3
+            position: relative
+            margin-top: -2.2rem
+
+            span 
+                display: table
+                padding: .2rem 3rem
+                color: $color-white
+    .list-category
+        .category
+            margin-top: 0
+                                    
+
+    #wrapper-banner
+        width: 100%
+        height: 22rem
+        z-index: -1
+        display: table
+
+        #banner-title
+            display: table-cell
+            vertical-align: middle
+            text-align: center
+
+            h1
+                color: $color-white
+                background: $color-lighten-black
+                width: 80%
+                margin: auto
+                padding: .3rem 0
+
+                strong
+                    color: $color-white
+
+        .bg-video
+            width: 100%
+            background: url(/img/d0-conect.jpg) no-repeat
+            background-size: cover
+            position: fixed
+        .bg-blog
+            width: 100%
+            position: fixed
+
+    .wrapper-content
+
+        padding: 1.5rem 0
+        display: table
+        width: 100%
+        height: 100%
+        text-align: center
+
+        &.border
+            /*border: .07143rem solid $color-light-grey*/
+
+            a 
+                &:hover
+                    text-decoration: underline
+
+            h3
+                &:hover
+                    a
+                        &:hover
+                        text-decoration: none
+
+        img 
+            z-index: 3
+        
+        label
+            width: 100%
+            text-align: left
+        
+        textarea
+            width: 100%
+            padding: .5rem
+            min-height: 12rem
+
+        a
+            &:hover
+                text-decoration: none
+                .category
+                    span 
+                        transition-duration: 0.7s
+
+                h3,
+                p
+                    transition-duration: 0.7s
+                    color: $color-blue-cloud
+                
+        .icon
+            width: 100%
+            display: table
+            
+
+            &.plus
+                padding-top: 2rem
+                svg
+                    max-width: 18rem
+                    min-height: 18rem
+            
+            &.logo
+                padding-top: 0
+                svg
+                    max-width: 50rem
+                    min-height: 12rem
+            
+            &.branding
+                padding-top: 0
+                svg
+                        max-width: 19rem
+                        min-height: 14rem
+                        margin: auto
+            &.consultoria-seo
+                padding-top: 0
+                svg
+                        max-width: 12rem
+                        min-height: 10rem
+                        margin: auto
+            &.site
+                padding-top: 0
+                svg
+                        max-width: 12rem
+                        min-height: 7rem
+                        margin: auto
+
+            &.loja-virtual
+                padding-top: 0
+                svg
+                        max-width: 8rem
+                        min-height: 11rem
+                        margin: auto
+            
+            &.minus
+                svg
+                    max-width: 5rem
+                    min-height: 5rem
+
+            &.seo
+                svg
+                    max-width: 12rem
+
+            svg
+                width: 100%
+                max-width: 7.14285714rem
+                min-height: 7.14285714rem
+
+
+
+
+                .stroke-white
+                    stroke: $color-white
+                .stroke-dark-blue
+                    stroke: $color-dark-blue
+                .stroke-magenta-violet
+                    stroke: $color-magenta-violet
+                .stroke-blue-cloud
+                    stroke: $color-blue-cloud
+
+                .stroke
+                    fill: none
+                    stroke-width: 8
+                    stroke-linecap: round
+                    stroke-linejoin: round
+                    stroke-miterlimit: 10
+
+            &.design,
+            &.inbound,
+            &.ads,
+               &:hover
+                    @include pulse
+
+            &.twitter,
+            &.facebook,
+            &.instagram,
+            &.linkedin,
+            &.youtube
+                &:hover
+                    -webkit-animation: bounce 0.8s linear alternate
+                    -moz-animation: bounce 0.8s linear alternate
+                    -o-animation: bounce 0.8s linear alternate
+                    animation: bounce 0.8s linear alternate    
+            
+        .especialidade
+            
+            svg
+                width: 100%
+                max-width: 3rem
+                min-height: 3rem
+            p
+                margin-bottom: 0
+        h2
+            margin-bottom: 1rem
+            text-align: left
+                            
+        h3 
+            font-weight: bold
+            width: 100%
+
+        p 
+            text-align: left
+
+        ul 
+            min-height: 21rem
+            padding: 3rem 0
+            margin: 0
+
+            li
+                list-style: none
+        
+
+        &.news
+            h3 
+                text-align: left
+                font-size: 1.3rem
+
+        ol
+            padding-left: 0
+            li
+                text-align: left
+                margin-bottom: 1rem
+                
+    #wrapper-map
+        padding-bottom: 3rem
+
+        h3 
+            font-family: Myriad-Pro, Arial, Tahoma, Verdana
+            font-weight: normal
+        a 
+            color: $color-white
+            &:hover
+                text-decoration: underline
+        .wrapper-content
+            &.d0
+                background: $color-graphite
+            &.design
+                background: $color-blue-cloud
+            &.inbound
+                background: $color-dark-blue
+            &.ads
+                background: $color-magenta-violet
+
+        .d0,
+        .design,
+        .inbound,
+        .ads
+            margin-top: -3rem 
+            @include breakpoint(md)
+                margin-top: 0
+        ul 
+            min-height: auto
+            @include breakpoint(lg)
+                min-height: 27rem
+            li 
+                line-height: 2rem
+
+
+    #wrapper-social-networks
+        background: $color-lighten-black
+
+        .wrapper-content
+            padding: 0
+
+        ul
+            display: table
+            width: 100%
+            position: relative
+            margin: 0
+            text-align: center
+
+            li
+                list-style: none
+                display: table-cell
+                position: relative
+                padding: 1rem
+                cursor: pointer
+
+    #wrapper-footer
+        background: $color-white
+        padding: 1rem 0
+        text-align: center
+        span 
+            font-family: 'Play', sans-serif
+
+    #wrapper-master
+
+        background: $color-transparent
+
+        .container
+            background: $color-white
+
+        .featured
+            padding: 2rem 0
+
+        .section
+            padding: 5rem 0 10rem 0
+
+    #breadcrumb
+        background: $color-white
+
+        ul
+            min-height: auto
+            padding: 0
+            display: table
+            width: 100%
+
+            li 
+                float: left
+                display: table
+                font-family: 'Play', sans-serif
+
+                &:nth-child(1)
+                    &:before
+                        display: none
+
+                &:before
+                    content: '\003e'
+                    padding: 0 1rem
+                    color: $color-blue-cloud
+
+                a 
+                    font-family: 'Play', sans-serif
+
+                span 
+                    color: $color-magenta-violet
+                    font-family: 'Play', sans-serif
+
+//check-up.sass
+
+#standing
+
+    #wrapper-main
+        &.page-inside
+
+            #wrapper-banner
+                background: center center no-repeat
+
+                &:before
+                    content: ''
+                    display: block
+                    position: absolute
+                    top: 0
+                    left: 0
+                    height: 100%
+                    width: 100%
+                    background: $color-lighten-black
+
+                #banner-title
+                    h1
+                        background: $color-transparent
+
+            #wrapper-master
+                background: $color-white
+
+            #wrapper-social-networks
+                background: $color-black
+    
+            .wrapper-content
+                ul 
+                    text-align: left
+                    padding-left: 2rem
+                    
+                    li 
+                        input
+                            display: inline-flex
+                            cursor: pointer
+                        label
+                            margin-bottom: 0
+                            margin-left: .5rem
+        &.orcamento 
+            #wrapper-banner
+                background-image: url('/img/bg-checkup.jpg')
+        &.empresa 
+            #wrapper-banner
+                background-image: url('/img/empresa.jpg')
+        &.branding 
+            #wrapper-banner
+                background-image: url('/img/branding.jpg') 
+        &.ecommerce 
+            #wrapper-banner
+                background-image: url('/img/ecommerce.jpg')
+        &.site 
+            #wrapper-banner
+                background-image: url('/img/site.jpg')
+        &.usabilidade 
+            #wrapper-banner
+                background-image: url('/img/usabilidade.jpg')
+        &.blog-corporativo 
+            #wrapper-banner
+                background-image: url('/img/blog-corporativo.jpg')
+        &.user-interface
+            #wrapper-banner
+                background-image: url('/img/user-interface.jpg')
+        &.seo
+            #wrapper-banner
+                background-image: url('/img/seo.jpg')
+        &.marketing-conteudo
+            #wrapper-banner
+                background-image: url('/img/marketing-de-conteudo.jpg')
+        &.remarketing
+            #wrapper-banner
+                background-image: url('/img/remarketing.jpg')
+        &.google-tag-manager
+            #wrapper-banner
+                background-image: url('/img/google-tag-manager.jpg') 
+        &.google-analytics
+            #wrapper-banner
+                background-image: url('/img/google-analytics.jpg')
+        &.email-marketing
+            #wrapper-banner
+                background-image: url('/img/email-marketing.jpg')
+        &.google-adwords
+            #wrapper-banner
+                background-image: url('/img/google-adwords.jpg')
+        &.linkedin-ads
+            #wrapper-banner
+                background-image: url('/img/linkedin-ads.jpg')
+        &.facebook-ads
+            #wrapper-banner
+                background-image: url('/img/facebook-ads.jpg')
+        &.youtube-ads
+            #wrapper-banner
+                background-image: url('/img/youtube-ads.jpg')
+        &.blog
+            #wrapper-banner
+                background-image: url('/img/blog.jpg')
+        &.blog-inside
+             #wrapper-banner
+                background-image: none
+                height: 40rem
+        
+    #wrapper-master
+        .section
+            &.section-blog
+                padding: 1rem 0 10rem 0
+
+//form style
+.form-default
+    .lbl-title
+        font-weight: 800
+        font-size: 1.2rem
+
+    .form-control
+        border-radius: 0
+        font-weight: bold       
+        &:focus
+             outline: 2px solid $color-lighten-blue-cloud
+
+    .styled-checkbox
+        position: absolute // take it out of document flow
+        opacity: 0// hide it
+
+        & + label
+            position: relative
+            cursor: pointer
+            padding: 0
+
+        & + label:before
+            content: ""
+            margin-right: 10px
+            display: inline-block
+            vertical-align: text-top
+            width: 20px
+            height: 20px
+            border: 2px solid $color-blue-cloud
+
+        &:hover + label:before
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12)
+            
+        &:focus + label:before
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12)
+
+        // Box checked
+        &:checked + label:before 
+            background: $color-blue-cloud
+
+        // Disabled state label. 
+        &:disabled + label
+            color: $color-lighten-black
+            cursor: auto
+
+        // Disabled box.
+        &:disabled + label:before
+            box-shadow: none
+            background: #ddd
+
+        // Checkmark. Could be replaced with an image
+        &:checked + label:after
+            content: ""
+            position: absolute
+            left: 5px
+            top: 9px
+            background: white
+            width: 2px
+            height: 2px
+            box-shadow: 2px 0 0 $color-white, 4px 0 0 $color-white, 4px -2px 0 $color-white, 4px -4px 0 $color-white, 4px -6px 0 $color-white, 4px -8px 0 $color-white
+            transform: rotate(45deg)
+
+        
+    .btn-send
+        width: 40%
+
+//nossa equipe
+.nossa-equipe
+    .pessoa
+        text-align: center
+        padding: 0 6rem 0 6rem
+        .desc-pessoa
+            text-align: center
+            width: 100%
+            height: 100%
+        img
+            max-width: 100%
+            height: auto
+            border-radius: 100%
+            border: 4px solid $color-graphite
+            margin-bottom: 10px
+
+//blog
+.category-dark-blue
+    span
+        background: $color-dark-blue
+        
+.category-blue-cloud
+    span
+        background: $color-blue-cloud
+
+.category-magenta-violet
+    span
+        background: $color-magenta-violet
+
+.category-graphite
+    span
+        background: $color-graphite
+
+.opening 
+    .img-responsive
+        height: 210px
+
+.blog
+    a
+        &:hover
+            @include hover-blue
+        p
+            &:hover
+                @include hover-blue
+    .posts-destaques
+        .post-principal
+            .img-responsive
+                height: 400px
+
+        h3
+            font-weight: bold
+        .news
+            .img-responsive
+                height: 160px
+                                       
+    .list-category
+        margin-top: 2rem
+        margin-bottom: 3rem
+
+        li
+            margin-bottom: .5rem
+    
+        
+    .lasts-posts
+        margin-top: 2rem
+
+        li
+            border-bottom: 1px solid $color-light-grey
+            margin-bottom: 1rem
+            padding-bottom: 1rem
+
+            a
+                font-size: 0.9rem
+.blog-inside
+    #wrapper-banner
+        background-image: none
+    .img-responsive
+
+        &.img-author
+
+            width: 70px
+            height: 70px
+
+            img
+                border-radius: 100%
+    .info-author
+        border-bottom: 1px solid $color-light-grey
+
+        .date-author
+            padding-top: 1rem
+
+    .list-sociais
+        padding-top: 1rem
+        li
+            float: left
+            margin-right: .5rem
+            svg
+                width: 2rem
+                border-radius: 100%
+                border: 2px solid
+                &:hover
+                    transition-duration: 0.7s
+                &.icon-facebook
+                    border-color: $color-facebook
+
+                    &:hover
+                        background-color: $color-facebook
+
+                        .fill-facebook
+
+                            fill: $color-white
+                &.icon-twitter
+                    border-color: $color-twitter
+                    
+                    &:hover
+                        background-color: $color-twitter
+
+                        .fill-twitter
+
+                            fill: $color-white
+                &.icon-google-plus
+                    border-color: $color-google-plus
+                    padding: 4px
+                    
+                    &:hover
+                        background-color: $color-google-plus
+
+                        .fill-google-plus
+
+                            fill: $color-white
+                
+                &.icon-linkedin
+                    border-color: $color-linkedin
+                    
+                    &:hover
+                        background-color: $color-linkedin
+
+                        .fill-linkedin
+
+                            fill: $color-white
+    .content-post
+        padding-top: 2rem
+        padding-bottom: 2rem
+    
+    .posts-relacionados
+        a
+            
+            .img-responsive
+                height: 45px
+            p 
+                font-size: 0.9rem
+                color: $color-blue-cloud
+                font-weight: bold
+            &:hover
+                p
+                    text-decoration: underline
